@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-headless-planning/dist/components/VirtualGroupCell.js b/node_modules/react-headless-planning/dist/components/VirtualGroupCell.js
+index 20f5cb8..8c3aa37 100644
+--- a/node_modules/react-headless-planning/dist/components/VirtualGroupCell.js
++++ b/node_modules/react-headless-planning/dist/components/VirtualGroupCell.js
+@@ -6,7 +6,7 @@ import { getNewTaskForDropOrPaste, getUniqueId, } from "../lib/utils";
+ import { memo } from "react";
+ const VirtualGroupCell = ({ group, i, props, getTasks, isValidTask, addTask, deleteTask, getTask, day, hash, tasks, tasksStore, start, end }) => {
+     return (_jsx("div", { onDragOver: (e) => e.preventDefault(), onDrop: (event) => {
+-            const dropInfo = getNewTaskForDropOrPaste(day.positionDay, group.id, getTask, hash);
++            const dropInfo = getNewTaskForDropOrPaste(event, day.positionDay, group.id, getTask, hash);
+             if (!dropInfo)
+                 return;
+             if (props.drop === "copy") {
